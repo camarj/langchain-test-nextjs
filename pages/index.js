@@ -3,17 +3,13 @@ import { Inter } from 'next/font/google';
 import { langchainBasic } from './api/langchainBasic';
 import { langchainMultiSteep } from './api/langchainMultiSteep';
 import { langchainMultiSteepDinamic } from './api/langchainMultiSteepDinamic';
+import { langchainMemory } from './api/langchainMemory';
 
 import { OpenAI } from 'langchain/llms/openai';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const agentresult = async () => {
-  const result = await langchainMultiSteepDinamic();
-  console.log(result);
-};
-
-agentresult();
+langchainMemory();
 
 export default function Home() {
   return (
